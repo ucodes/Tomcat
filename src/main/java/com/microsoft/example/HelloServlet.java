@@ -16,7 +16,7 @@ public class HelloServlet extends HttpServlet {
         resp.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
         
         var out = resp.getOutputStream();
-        out.println("This is a Jakarta EE 9 Servlet! - updated");
+        out.println("This is a Jakarta EE 9 Servlet! - updated apr-22");
         out.println();
         out.println("this.getServletContext().getServerInfo() = " + this.getServletContext().getServerInfo());
         out.println("this.getClass().getSuperclass() = " + this.getClass().getSuperclass());
