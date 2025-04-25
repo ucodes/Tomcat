@@ -13,7 +13,9 @@ pipeline {
 			}
 		}
 		stage('Deploy stag env') {
+			steps {
 			build job: 'deploy_app_staging'
+			}
 		}
 	}
 } 
