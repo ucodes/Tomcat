@@ -12,19 +12,11 @@ pipeline {
 				}
 			}
 		}
-		stage('Deploy stag env') {
+			stage ('create tomcat Docker image') {
 			steps {
-			build job: 'deploy_app_staging'
+				sh 'docker build . -t tomcatsamplewebapp:${env.BUILD_ID}'
 			}
-		}
-		stage('Deploy PROD env') {
-			steps {
-			timeout(time:5, unit:'DAYS') {
-			input message:"Approve PROD Deployment?"
 			}
-			build job: 'deploy_app_prod'
-			}
-		}
 	}
 } 
 
